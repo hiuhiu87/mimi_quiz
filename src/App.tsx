@@ -138,7 +138,9 @@ function App() {
         onClick={getRandomQuestions}
         disabled={remainingQuestions.length < 2}
       >
-        Get Random Questions
+        {remainingQuestions.length < 2
+          ? "No more questions / Reload the page to start over"
+          : "Get Random Questions"}
       </Button>
       <QuestionWrapper>
         {currentQuestions.map((question, index) => (
